@@ -126,15 +126,24 @@ namespace TPPizza2.Controllers
                         ModelState.AddModelError("", "Il existe déjà une pizza portant de ce nom ");
                         return View();
                     }
+                    
 
+                    if(vm.Pizza.Ingredients.Count < 2 || vm.Pizza.Ingredients.Count > 5)
+                    {
+                        ModelState.AddModelError("", "Une pizza doit avoir entre 2 et 5 ingredients");
+                        return View();
+                    }
+
+                    pizza.Nom = vm.Pizza.Nom;
+                    pizza.Pate = FakeDbPizza.Instance.PatesDisponibles.FirstOrDefault(p => p.Id == vm.selectedPate);
+                    pizza.Ingredients = FakeDbPizza.Instance.IngredientsDisponibles.Where(p => vm.selectedIngredients.Contains(p.Id)).ToList();
+
+                    return RedirectToAction("Index");
                 }
                 
-
-                pizza.Nom = vm.Pizza.Nom;
-                pizza.Pate = FakeDbPizza.Instance.PatesDisponibles.FirstOrDefault(p => p.Id == vm.selectedPate);
-                pizza.Ingredients = FakeDbPizza.Instance.IngredientsDisponibles.Where(p => vm.selectedIngredients.Contains(p.Id)).ToList();
-
-                return RedirectToAction("Index");
+                    return View();
+                
+                
             }
             catch
             {

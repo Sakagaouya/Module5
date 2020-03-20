@@ -14,7 +14,9 @@ namespace TPPizza2_BO
         [Required]
         [StringLength(20, MinimumLength = 5)]
         public string Nom { get; set; }
+
         public Pate Pate { get; set; }
+
         public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
        
     }
