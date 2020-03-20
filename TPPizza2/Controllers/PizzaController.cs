@@ -115,8 +115,21 @@ namespace TPPizza2.Controllers
         {
             try
             {
-
                 Pizza pizza = FakeDbPizza.Instance.Pizzas.FirstOrDefault(p => p.Id == vm.Pizza.Id);
+
+                //Méthode ModelState
+                if (ModelState.IsValid)
+                {
+                    if (FakeDbPizza.Instance.Pizzas.Any(p => p.Nom.ToUpper() == pizza.Nom.ToUpper()
+                    && p.Id != pizza.Id))
+                    {
+                        ModelState.AddModelError("", "Il existe déjà une pizza portant de ce nom ");
+                        return View();
+                    }
+
+                }
+                
+
                 pizza.Nom = vm.Pizza.Nom;
                 pizza.Pate = FakeDbPizza.Instance.PatesDisponibles.FirstOrDefault(p => p.Id == vm.selectedPate);
                 pizza.Ingredients = FakeDbPizza.Instance.IngredientsDisponibles.Where(p => vm.selectedIngredients.Contains(p.Id)).ToList();
