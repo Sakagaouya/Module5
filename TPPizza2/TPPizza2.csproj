@@ -189,9 +189,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TPModule5-2-BO\TPModule5-2-BO.csproj">
-      <Project>{6066eaaa-6025-49bc-a1f3-fc6447c42cd9}</Project>
-      <Name>TPModule5-2-BO</Name>
+    <ProjectReference Include="..\TPPizza2-BO\TPPizza2-BO.csproj">
+      <Project>{29ef156c-25f9-4cd0-a499-9dd1acac0e2d}</Project>
+      <Name>TPPizza2-BO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPChat", "TPChat\TPChat.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPPizza2", "TPPizza2\TPPizza2.csproj", "{8AFC1D49-DDF7-4FC3-A445-1E376341F2AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPPizza2-BO", "TPPizza2-BO\TPPizza2-BO.csproj", "{29EF156C-25F9-4CD0-A499-9DD1ACAC0E2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8AFC1D49-DDF7-4FC3-A445-1E376341F2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFC1D49-DDF7-4FC3-A445-1E376341F2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AFC1D49-DDF7-4FC3-A445-1E376341F2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29EF156C-25F9-4CD0-A499-9DD1ACAC0E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EF156C-25F9-4CD0-A499-9DD1ACAC0E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EF156C-25F9-4CD0-A499-9DD1ACAC0E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EF156C-25F9-4CD0-A499-9DD1ACAC0E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

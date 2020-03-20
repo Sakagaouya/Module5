@@ -1,12 +1,12 @@
 ﻿
-using TPModule5_2_BO;
+using TPPizza2_BO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using TPPizza2.Utils;
 using TPPizza2.Models;
 
-namespace TP_pizzas.Controllers
+namespace TPPizza2.Controllers
 {
     public class PizzaController : Controller
     {
@@ -115,6 +115,7 @@ namespace TP_pizzas.Controllers
         {
             try
             {
+
                 Pizza pizza = FakeDbPizza.Instance.Pizzas.FirstOrDefault(p => p.Id == vm.Pizza.Id);
                 pizza.Nom = vm.Pizza.Nom;
                 pizza.Pate = FakeDbPizza.Instance.PatesDisponibles.FirstOrDefault(p => p.Id == vm.selectedPate);
