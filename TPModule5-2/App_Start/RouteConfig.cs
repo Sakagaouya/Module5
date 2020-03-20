@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace TPModule5_1
+namespace TPModule5_2
 {
     public class RouteConfig
     {

@@ -5,15 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using TPModule5_2_BO;
 
-namespace TP_pizzas.Models
+namespace TPModule5_2.Models
 {
     public class PizzaVM
     {
-        public Pizza pizza { get; set; }
+        public Pizza Pizza { get; set; }
 
-        public List<Ingredient> ingredients = new List<Ingredient>();
-
-        public List<Pate> pates = new List<Pate>();
+        public List<SelectListItem> Ingredients { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> Pates { get; set; } = new List<SelectListItem>();
 
         public List<int> selectedIngredients { get; set; } = new List<int>();
 

@@ -1,6 +1,7 @@
-﻿@model TPModule5_2_BO.Pizza
+﻿@model TPModule5_2.Models.PizzaVM
 
-<h2>Création d'une pizza</h2>
+<h2>Modification d'une pizza</h2>
+
 
 @using (Html.BeginForm())
 {
@@ -10,6 +11,8 @@
         <h4>Pizza</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Pizza.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Pizza.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -21,20 +24,23 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Pizza.Pate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.IdSelectedPate, Model.Pates, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.selectedPate, Model.Pates, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Pizza.Pate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Pizza.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Pizza.Ingredients, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.ListBoxFor(model => model.IdSelectedIngredients, Model.Ingredients, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ListBoxFor(model => model.selectedIngredients, Model.Ingredients, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Pizza.Pate, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        @Html.CustomSubmit("Créer")
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
     </div>
 }
 

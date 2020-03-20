@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TPModule5_1
+namespace TPModule5_2
 {
     public class BundleConfig
     {

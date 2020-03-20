@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace TPModule5_1
+namespace TPModule5_2
 {
     public class MvcApplication : System.Web.HttpApplication
     {

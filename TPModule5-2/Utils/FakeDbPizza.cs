@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TPModule5_1.Models;
 using TPModule5_2_BO;
 
-namespace TPModule5_1.Utils
+namespace TPModule5_2.Utils
 {
     public class FakeDbPizza
     {
@@ -14,9 +13,10 @@ namespace TPModule5_1.Utils
 
         private FakeDbPizza()
         {
+            // Charger d'abord les ingredients et les pates
+            ingredientsDisponibles = this.GetIngredientsDispo();
+            patesDisponibles = this.GetPatesDisponibles();
             pizzas = this.GetCarteDesPizzas();
-            IngredientsDisponibles = this.GetIngredientsDispo();
-            PatesDisponibles = this.GetPatesDisponibles();
 
         }
 
@@ -36,15 +36,27 @@ namespace TPModule5_1.Utils
             }
         }
 
+        //les attributs sont tous read-only
         private List<Pizza> pizzas;
-        private List<Ingredient> IngredientsDisponibles;
-        private List<Pate> PatesDisponibles;
+        private List<Ingredient> ingredientsDisponibles;
+        private List<Pate> patesDisponibles;
 
         public List<Pizza> Pizzas
         {
             get { return pizzas; }
         }
-        
+
+        public List<Ingredient> IngredientsDisponibles
+        {
+            get { return ingredientsDisponibles; }
+        }
+
+        public List<Pate> PatesDisponibles
+        {
+            get { return patesDisponibles; }
+        }
+
+     
         private List<Pizza> GetCarteDesPizzas()
         {
             
